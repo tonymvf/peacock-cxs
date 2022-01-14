@@ -4,18 +4,22 @@
   "compilerOptions": {
     "baseUrl": "./",
     "outDir": "./dist/out-tsc",
-    "forceConsistentCasingInFileNames": true,
-    "strict": true,
-    "noImplicitOverride": true,
-    "noPropertyAccessFromIndexSignature": true,
-    "noImplicitReturns": true,
-    "noFallthroughCasesInSwitch": true,
+    "forceConsistentCasingInFileNames": false,
+    "strict": false,
+    "noImplicitReturns": false,
+    "noFallthroughCasesInSwitch": false,
     "sourceMap": true,
     "declaration": false,
     "downlevelIteration": true,
     "experimentalDecorators": true,
     "moduleResolution": "node",
     "importHelpers": true,
+    "paths": {
+      "peacock-cxs": [
+        "dist/peacock-cxs/peacock-cxs",
+        "dist/peacock-cxs"
+      ]
+    },
     "target": "es2017",
     "module": "es2020",
     "lib": [
@@ -25,8 +29,8 @@
   },
   "angularCompilerOptions": {
     "enableI18nLegacyMessageIdFormat": false,
-    "strictInjectionParameters": true,
-    "strictInputAccessModifiers": true,
-    "strictTemplates": true
+    "strictInjectionParameters": false,
+    "strictInputAccessModifiers": false,
+    "strictTemplates": false
   }
 }

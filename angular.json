@@ -28,7 +28,8 @@
             "inlineStyleLanguage": "scss",
             "assets": [
               "src/favicon.ico",
-              "src/assets"
+              "src/assets",
+              "src/styles.scss"
             ],
             "styles": [
               "src/styles.scss"
@@ -102,6 +103,37 @@
               "src/styles.scss"
             ],
             "scripts": []
+          }
+        }
+      }
+    },
+    "peacock-cxs": {
+      "projectType": "library",
+      "root": "projects/peacock-cxs",
+      "sourceRoot": "projects/peacock-cxs/src",
+      "prefix": "pocxs",
+      "architect": {
+        "build": {
+          "builder": "@angular-devkit/build-angular:ng-packagr",
+          "options": {
+            "project": "projects/peacock-cxs/ng-package.json"
+          },
+          "configurations": {
+            "production": {
+              "tsConfig": "projects/peacock-cxs/tsconfig.lib.prod.json"
+            },
+            "development": {
+              "tsConfig": "projects/peacock-cxs/tsconfig.lib.json"
+            }
+          },
+          "defaultConfiguration": "production"
+        },
+        "test": {
+          "builder": "@angular-devkit/build-angular:karma",
+          "options": {
+            "main": "projects/peacock-cxs/src/test.ts",
+            "tsConfig": "projects/peacock-cxs/tsconfig.spec.json",
+            "karmaConfig": "projects/peacock-cxs/karma.conf.js"
           }
         }
       }

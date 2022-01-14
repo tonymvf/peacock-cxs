@@ -1,0 +1,16 @@
+<div>
+    <button (click)="addItem('bar')">Add Bar</button>
+    <button (click)="addItem('line')">Add Line</button>
+    <button (click)="addItem('doughnut')">Add Doughtnut</button>
+</div>
+<gridster [options]="options">
+    <gridster-item [item]="item" *ngFor="let item of dashboard" [id]="item.id">
+        <div class="button-holder">
+            <p class="label">{{item.type | titlecase}} {{item.label}}</p>
+            <div class="chart-container">
+                <ng-container *ngComponentOutlet="getChartByType(item.type); injector: paramsInjector(item.params)"></ng-container>
+            </div>
+            <img class="delete" src="../../../assets/Delete.svg" (mousedown)="removeItem($event, item)">
+        </div>
+    </gridster-item>
+</gridster>
